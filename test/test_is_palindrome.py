@@ -26,3 +26,5 @@ invalid_palindromes = [
 def test_string_is_not_palindrome(words):
     assert is_palindrome(words) is False
 
+
+# test invalid input
