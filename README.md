@@ -50,7 +50,9 @@ result: ['s', 'aba', 'ada']
 ```
 
 
+
 ## Palindrome functionalities introspection
+
 
 **Level 1: Checking if a string is a palindrome**
 
@@ -68,10 +70,12 @@ a   a
 Notice a pattern? If yes, then you've got the idea now, checking if a string is a palindrome is
 simply comparing if both ends until the center of the string are the same.
 
-This can be done with time complexity of **O(n)**.
+This can be done with time complexity of **O(n)** since we only need to iterate the string in `n/2` time.
 
 As for the space complexity, since we really don't store temporary arrays
 and only use a copy of the original string, we could say that it is within **Ω(n)**
+
+
 
 **Level 2: Get the longest palindrome in a string**
 
@@ -108,6 +112,17 @@ a   s . a . b . a . e . c
 
 ```
             b
+a . s . a .   . a . e . c
+```
+
+```
+            b
+          .   .
+a . s . a       a . e . c
+```
+
+```
+            b
           .   .
         a       a
 a . s .           . e . c
@@ -122,9 +137,22 @@ a . s . a . b   a . e . c
 
 until the end of the string. At the end, it will return the longest palindrome we found.
 
-Time complexity for this one is actually still `O(n)` since we loop the string once,
+Time complexity for this one is actually still **O(n)** since we loop the string once,
 and we also loop characters starting from our candidate 'center'. But we know that 
 the length of that loop will be less than `n`.
 
 Space complexity is about **Ω(n)** since we really didn't store much information and only records
-the longest string we found.
+the longest string we found and worst case scenario for the longest palindrome is `n`.
+
+
+
+**Level 3: Split string to palindromes**
+
+Splitting subset palindromes in a string can be an extension of the last level. We can get the largest palindrome
+in a string and then removing that subset to the original string until the original string is blank.
+
+Time complexity of this will be `O(n^2)` since the worst case is that there is no palindrome in a string and then we
+also use the previous level's function inside the loop which has a complexity of **O(n)**.
+
+Space complexity for this is **Ω(2n)** since we store divided substrings in an array and the total size of the
+substrings are n and also the space complexity from the last level (level2).
