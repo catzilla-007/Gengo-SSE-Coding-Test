@@ -6,6 +6,7 @@ from src.palindrome.get_longest_palindrome import get_longest_palindrome
 palindromes = [
     ('abaxyzzyxf', 'xyzzyx'),
     ('amaiislee', 'ama'),
+    ('a', 'a'),
 ]
 
 

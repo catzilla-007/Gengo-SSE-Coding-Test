@@ -1,4 +1,4 @@
-from src.validator import validate_palindrome_character
+from src.validators import validate_palindrome_character
 
 
 def is_palindrome(palindrome: str) -> bool:

@@ -1,7 +1,7 @@
 from pytest import raises, mark
 
 from src.errors import InvalidInputError
-from src.validator import validate_palindrome_character
+from src.validators import validate_palindrome_character
 
 
 def test_valid_input():
