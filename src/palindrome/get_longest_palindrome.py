@@ -26,7 +26,8 @@ def get_longest_palindrome(palindrome: str) -> str:
 
     for m in range(n):
         width = 0
-        while __is_l_bound(m, width) and __is_r_bound(m, width, n) and __is_char_same(m, width, pal):
+        while __is_l_bound(m, width) and __is_r_bound(m, width, n) and \
+                __is_char_same(m, width, pal):
             width += 1
 
         if len(longest) < len(pal[m - width: m + width + 1]):
