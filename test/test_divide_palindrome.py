@@ -6,6 +6,7 @@ from src.palindrome.divide_palindrome import divide_palindrome
 palindromes = [
     ('noonabbad', ['noon', 'abba', 'd']),
     ('hello', ['h', 'e', 'll', 'o']),
+    ('asabada', ['asa', 'b', 'ada']),
 ]
 
 
