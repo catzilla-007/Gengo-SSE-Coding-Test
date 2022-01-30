@@ -50,5 +50,27 @@ result: ['s', 'aba', 'ada']
 ```
 
 
-## Palindrome functionalities
+## Palindrome functionalities introspection
 
+**Level 1: Checking if a string is a palindrome**
+
+How do we technically validate if a string is a palindrome? How can we write it in code?
+Well the logic for checking if a string is a palindrome is pretty straightforward.
+
+Consider this string: `abcba`, now lets try folding this like a piece of paper vertically
+
+```
+a   a
+ b b
+  c
+```
+
+Notice a pattern? If yes, then you've got the idea now, checking if a string is a palindrome is
+simply comparing if both ends of the string are the same.
+
+This can be done with time complexity of **O(n)**.
+
+As for the space complexity, since we really don't store temporary arrays
+and only use a copy of the original string, we could say that it is within **Ω(n)**
+
+**Level 2: Get the longest palindrome in a string**
