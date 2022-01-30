@@ -66,7 +66,7 @@ a   a
 ```
 
 Notice a pattern? If yes, then you've got the idea now, checking if a string is a palindrome is
-simply comparing if both ends of the string are the same.
+simply comparing if both ends until the center of the string are the same.
 
 This can be done with time complexity of **O(n)**.
 
@@ -74,3 +74,57 @@ As for the space complexity, since we really don't store temporary arrays
 and only use a copy of the original string, we could say that it is within **Ω(n)**
 
 **Level 2: Get the longest palindrome in a string**
+
+Getting the longest palindrome substring in a string is quite a bit more complex compared to the first level.
+Contrary to the first logic, this time we need to check starting from the center of the 'supposed-to-be' palindrome.
+
+With this we need to consider some scenarios first: what if the palindrome is even like `aabbaa`? Then it might be
+challenging finding the center compared to `aabaa`. With this adding extra characters between the characters in the
+string will be useful.
+
+`aabbaa` can be transformed to `a.a.b.b.a.a`
+
+The characters doesn't need to be a period, as long as the inserted characters are the same. This will prove neutral
+when comparing both ends of the palindrome.
+
+Now, how do we get a palindrome substring? Well, we need to check every character as the center of the palindrome.
+Consider this example: `a.s.a.b.a.e.c`, the palindrome is `a.b.a`.
+
+Now, we try to fold it starting from the center while checking incrementally if both ends are the same. If not, then we
+look for another candidate center. Lets check below scenario:
+
+
+```
+a
+  . s . a . b . a . e . c
+```
+
+```
+  .
+a   s . a . b . a . e . c
+```
+
+...and so forth... until...
+
+```
+            b
+          .   .
+        a       a
+a . s .           . e . c
+```
+
+We then store the highest 'fold' we found. And so, we continue...
+
+```
+              .
+a . s . a . b   a . e . c
+```
+
+until the end of the string. At the end, it will return the longest palindrome we found.
+
+Time complexity for this one is actually still `O(n)` since we loop the string once,
+and we also loop characters starting from our candidate 'center'. But we know that 
+the length of that loop will be less than `n`.
+
+Space complexity is about **Ω(n)** since we really didn't store much information and only records
+the longest string we found.
