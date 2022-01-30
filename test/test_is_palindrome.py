@@ -1,6 +1,6 @@
 from pytest import mark
 
-from src.is_palindrome import is_palindrome
+from src.palindrome.is_palindrome import is_palindrome
 
 
 valid_palindromes = [

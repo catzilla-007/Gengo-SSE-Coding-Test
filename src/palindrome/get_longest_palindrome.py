@@ -1,4 +1,4 @@
-from .validator import validate_palindrome_character
+from src.validator import validate_palindrome_character
 
 
 def get_longest_palindrome(palindrome: str) -> str:

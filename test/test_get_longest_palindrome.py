@@ -1,6 +1,6 @@
 from pytest import mark
 
-from src.get_longest_palindrome import get_longest_palindrome
+from src.palindrome.get_longest_palindrome import get_longest_palindrome
 
 
 palindromes = [
