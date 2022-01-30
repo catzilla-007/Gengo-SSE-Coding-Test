@@ -46,7 +46,7 @@ $ pipenv run palindrome --level=3 --string=asabada
 
 level: 3
 string: asabada
-result: ['s', 'aba', 'ada']
+result: ['asa', 'b', 'ada']
 ```
 
 

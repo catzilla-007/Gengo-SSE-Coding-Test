@@ -30,7 +30,7 @@ def get_longest_palindrome(palindrome: str) -> str:
                 __is_char_same(m, width, pal):
             width += 1
 
-        if len(longest) < len(pal[m - width: m + width + 1]):
+        if len(longest.replace('.', '')) < len(pal[m - width: m + width + 1].replace('.', '')):
             longest = pal[m - width: m + width + 1]
 
     return longest.replace('.', '')
